@@ -5,7 +5,7 @@ ENV="dev"
 ORG="hunterdon"
 MSSP="ctoc"
 
-TOKEN="??"
+TOKEN="2667c45e1b18ea74766daccd7bfa9bf4e0914c41"
 
 sudo apt-get install software-properties-common
 sudo apt-add-repository universe
@@ -24,7 +24,7 @@ source ~/.profile
 pip install azure-cosmos
 
 cd ~
-git clone http://$TOKEN:x-oauth-basic@github.com/Sensato/packer-nids.git
+git clone http://csharpe101:$TOKEN@github.com/Sensato/packer-nids.git
 cd packer-nids
 git checkout appliance
 
