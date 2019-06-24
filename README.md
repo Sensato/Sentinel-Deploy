@@ -1,4 +1,5 @@
 # Sentinel Appliance Deployment
+Classified, and you should not know what this is.
 
 ## Pre-Requisites
 * git
