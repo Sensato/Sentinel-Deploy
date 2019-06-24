@@ -3,8 +3,6 @@ Classified, and you should not know what this is.
 
 ## Pre-Requisites
 * git
-* python
-* python-pip
 * [servicectl and serviced](https://github.com/smaknsk/servicectl)
 	- Follow README on there, then edit both with `nano` 
 
