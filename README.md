@@ -9,7 +9,7 @@
 
 ## Installation with Cubic
 * Clone this repository: `git clone [url].git` and `cd Sentinel-Deploy`
-* Move the service file to systemd: `mv *.service* /etc/systemd/system`
+* Move the service file to systemd: `mv *.service /etc/systemd/system`
 * Move the shell script to bin: `mv *.sh /usr/bin`
 * Give the service read/write/etc permissions: `chmod 644 /etc/systemd/system/sentinel_deploy.service`
 * Follow the servicectl/serviced README and install that.
