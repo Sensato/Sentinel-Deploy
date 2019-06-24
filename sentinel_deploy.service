@@ -1,0 +1,10 @@
+[Unit]
+Description=Deploy the Sentinel automatically.
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash /usr/bin/deployment.sh
+
+[Install]
+WantedBy=multi-user.target
