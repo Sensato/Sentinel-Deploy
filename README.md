@@ -1,16 +1,20 @@
 # Sentinel Appliance Deployment
 
-This is assumed to be used for something you don't know about unless you do.
-Should be a private repository, but I'm poor. 
+## Pre-Requisites
+* git
+* python
+* python-pip
+* [servicectl and serviced](https://github.com/smaknsk/servicectl)
+	- Follow README on there, then edit both with `nano` 
 
-To get it up and running:
-* Clone this repository in home directory, preferably. -> `git clone [url].git`
-* Place the `.service` file in `/etc/systemd/system` -> `mv [file] [directory]`
-* Go there and make it an executable file -> `cd /etc/systemd/system && chmod 644 sentinel_deploy.service` 
-* Place the `.sh` file in `/usr/bin` -> `mv [file] [directory]`
-
-..and then:
-* `sudo systemctl start sentinel_deploy.service`
-* `sudo systemctl status sentinel_deploy.service`
-* `sudo systemctl enable sentinel_deploy.service`
+## Installation with Cubic
+* Clone this repository: `git clone [url].git` and `cd Sentinel-Deploy`
+* Move the service file to systemd: `mv *.service* /etc/systemd/system`
+* Move the shell script to bin: `mv *.sh /usr/bin`
+* Give the service read/write/etc permissions: `chmod 644 /etc/systemd/system/sentinel_deploy.service`
+* Follow the servicectl/serviced README and install that.
+* `cd` to /usr/local/bin and edit both `servicectl` and `serviced` with `nano`
+	- Edit the first line of both to say `#!/bin/bash`
+	- Look for `SYSTEMD_UNITS_PATH` in `servicectl` and edit after `=` to say `/etc/systemd/system`
+* Finally, run this command to enable the service: `servicectl enable sentinel_deploy`
 
