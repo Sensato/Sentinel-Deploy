@@ -10,7 +10,7 @@ To get it up and running:
 * Place the `.sh` file in `/usr/bin`
 
 ..and then:
-`sudo systemctl start sentinel_deploy`
-`sudo systemctl status sentinel_deploy`
-`sudo systemctl enable sentinel_deploy`
+* `sudo systemctl start sentinel_deploy`
+* `sudo systemctl status sentinel_deploy`
+* `sudo systemctl enable sentinel_deploy`
 
