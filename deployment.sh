@@ -24,7 +24,17 @@ git clone http://csharpe101:$TOKEN@github.com/Sensato/packer-nids.git
 cd packer-nids
 git checkout appliance
 
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+# Install Azure CLI
+sudo apt install apt-transport-https lsb-release gnupg
+curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+    gpg --dearmor | \
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt update
+sudo apt install azure-cli
+
 az extension add --name azure-cli-iot-ext
 
 STR="Debug Message: Building Sentinel on environment $ENV, organization $ORG, msspid $MSSP."
