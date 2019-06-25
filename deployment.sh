@@ -7,19 +7,15 @@ MSSP="ctoc"
 
 TOKEN="2667c45e1b18ea74766daccd7bfa9bf4e0914c41"
 
-sudo apt-get install software-properties-common
+sudo apt install software-properties-common
 sudo apt-add-repository universe
 sudo apt-add-repository multiverse
 
-sudo apt-get update
+sudo apt update
 
-sudo apt-get install git curl python 
-
-curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-sudo python /tmp/get-pip.py
-pip install --user pipenv
-echo "PATH=$HOME/.local/bin:$PATH" >> ~/.profile
-source ~/.profile
+sudo apt install curl
+sudo apt install python 
+sudo apt install python-pip
 
 pip install azure-cosmos
 
