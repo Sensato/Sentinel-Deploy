@@ -3,7 +3,6 @@ Classified, and you should not know what this is.
 
 ## Pre-Requisites
 * git
-* python
 * a clean Ubuntu 18.04 64-bit installation
 
 ## Installation
