@@ -19,4 +19,5 @@ exit 0
 
 ## Distribution
 * Simply create a backup image of the current installation.
-* `dd if=/dev/sda of=~/[org]-sentinel.iso`
+* `dd if=/dev/sda | gzip > ~/[org]-sentinel.img.gz`
+	- Naturally, this will take a very long time to create the system image.
