@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # Variables
+# This is where a Sensato employee will change these varibles per organization
+# As per john's idea, the variables below could be set to 'not set' and be changed after boot through a prodID database
 ENV="dev"
 ORG="hunterdon"
 MSSP="ctoc"
 
+# Token generated in chloe's github, because she has access to Sensato's repos
 TOKEN="2667c45e1b18ea74766daccd7bfa9bf4e0914c41"
 
 sudo apt install software-properties-common -y
@@ -17,6 +20,7 @@ sudo apt install curl python python-pip -y
 pip install azure-cosmos
 
 cd ~
+# uses chloe's account:
 git clone http://csharpe101:$TOKEN@github.com/Sensato/packer-nids.git
 cd packer-nids
 git checkout appliance
