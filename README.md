@@ -3,7 +3,7 @@ Classified, and you should not know what this is.
 
 ## Pre-Requisites
 * git
-* a clean Ubuntu 18.04 64-bit installation
+* a clean Ubuntu **16.04** 64-bit installation
 
 ## Installation
 * Clone this repository: `git clone [url].git` and `cd Sentinel-Deploy`
@@ -18,6 +18,4 @@ exit 0
 * Give rc.local permissions: `sudo chown root /etc/rc.local` and `sudo chmod 777 /etc/rc.local`
 
 ## Distribution
-* Simply create a backup image of the current installation.
-* `dd if=/dev/sda | gzip > ~/[org]-sentinel.img.gz`
-	- Naturally, this will take a very long time to create the system image.
+* to do
