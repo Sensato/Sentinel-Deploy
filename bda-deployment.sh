@@ -40,7 +40,7 @@ az extension add --name azure-cli-iot-ext
 
 STR="Debug Message: Building BDA on environment $ENV, organization $ORG, msspid $MSSP."
 echo $STR
-sudo mkdir ~/.debug
+sudo mkdir -p ~/.debug
 sudo python build_bda.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-bda.debug-$(date +"%s").log 2>&1
 
 # Self Destruct
