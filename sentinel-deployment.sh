@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# SENTINEL APPLIANCE DEPLOYMENT SCRIPT
+
 # Variables
 # This is where a Sensato employee will change these varibles per organization
 ENV="dev"
@@ -38,7 +40,8 @@ az extension add --name azure-cli-iot-ext
 
 STR="Debug Message: Building Sentinel on environment $ENV, organization $ORG, msspid $MSSP."
 echo $STR
-sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.packer-$(date +"%s").log
+sudo mkdir ~/.debug
+sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-nids.debug-$(date +"%s").log
 
 # Self Destruct
 rm -rf ~/packer-nids
