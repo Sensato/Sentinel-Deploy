@@ -45,4 +45,5 @@ sudo python build_bda.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.deb
 
 # Self Destruct
 rm -rf ~/packer-bda
+sudo echo "exit 0" > /etc/rc.local # specific to BDA deployment, rc.local doesn't overwrite otherwise
 sudo reboot
