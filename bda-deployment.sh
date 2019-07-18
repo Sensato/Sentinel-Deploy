@@ -4,7 +4,7 @@
 
 # Variables
 # This is where a Sensato employee will change these varibles per organization
-ENV="prod"
+ENV="dev"
 ORG="ctoc"
 MSSP="ctoc"
 
