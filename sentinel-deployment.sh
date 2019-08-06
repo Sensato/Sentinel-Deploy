@@ -2,27 +2,27 @@
 
 # SENTINEL APPLIANCE DEPLOYMENT SCRIPT
 
-echo What is the environment?
+echo What is the environment
 read envInput
 ENV=$envInput
 echo environment is $envInput
 
-echo What is the organization?
+echo What is the organization
 read orgInput
 ORG=$orgInput
 echo organization is $orgInput
 
-echo What is the mssp?
+echo What is the mssp
 read msspInput
 MSSP=$msspInput
 echo mssp is $msspInput
 
-echo What is your github username?
+echo What is your github username
 read userInput
 USER=$userInput
 echo github username is $userInput
 
-echo What is your github token?
+echo What is your github token
 read tokenInput
 TOKEN=$tokenInput
 echo token is $tokenInput
