@@ -44,6 +44,6 @@ sudo mkdir -p ~/.debug
 sudo python build_bda.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-bda.debug-$(date +"%s").log 2>&1
 
 # Self Destruct
-# rm -rf ~/packer-bda
-# sudo echo "exit 0" > /etc/rc.local # specific to BDA deployment, rc.local doesn't overwrite otherwise
-# sudo reboot
+rm -rf ~/packer-bda
+sudo echo "exit 0" > /etc/rc.local # specific to BDA deployment, rc.local doesn't overwrite otherwise
+sudo reboot
