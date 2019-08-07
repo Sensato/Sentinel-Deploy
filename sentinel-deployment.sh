@@ -92,8 +92,12 @@ az extension add --name azure-cli-iot-ext
 STR="Debug Message: Building Sentinel on environment $ENV, organization $ORG, msspid $MSSP."
 echo $STR
 sudo mkdir -p ~/.debug
-sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-nids.debug-$(date +"%s").log 2>&1
+sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux
+
+//Run the following command instead of the previous command to write build output to a file at ~/.debug
+//sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-nids.debug-$(date +"%s").log 2>&1
 
 # Self Destruct
 # rm -rf ~/packer-nids
+# rm -rf ~/Sentinel-Deploy
 # sudo reboot
