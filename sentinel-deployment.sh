@@ -94,8 +94,8 @@ echo $STR
 sudo mkdir -p ~/.debug
 sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux
 
-//Run the following command instead of the previous command to write build output to a file at ~/.debug
-//sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-nids.debug-$(date +"%s").log 2>&1
+# Run the following command instead of the previous command to write build output to a file at ~/.debug
+# sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-nids.debug-$(date +"%s").log 2>&1
 
 # Self Destruct
 # rm -rf ~/packer-nids
