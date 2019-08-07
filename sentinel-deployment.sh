@@ -2,17 +2,17 @@
 
 # SENTINEL APPLIANCE DEPLOYMENT SCRIPT
 
-echo What is the environment
+echo What is the environment (prod/dev)
 read envInput
 ENV=$envInput
 echo environment is $envInput
 
-echo What is the organization
+echo What is the organization (acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester)
 read orgInput
 ORG=$orgInput
 echo organization is $orgInput
 
-echo What is the mssp
+echo What is the mssp (acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester)
 read msspInput
 MSSP=$msspInput
 echo mssp is $msspInput
