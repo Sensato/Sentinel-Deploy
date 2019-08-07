@@ -15,7 +15,7 @@ read envInput
 
 echo "Select organization: (acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester)"
 read orgInput
-	if [ $orgInput == "acme" ] || [$orgInput == "beebe"] || [$orgInput == "centrastate"] || [$orgInput == "ctoc"] || [$orgInput == "hunterdon"] || [$orgInput == "maimonides"] || [$orgInput == "sensato"] || [$orgInput == "westchester"];
+	if [ $orgInput == "acme" ] || [ $orgInput == "beebe" ] || [ $orgInput == "centrastate" ] || [ $orgInput == "ctoc" ] || [ $orgInput == "hunterdon" ] || [ $orgInput == "maimonides" ] || [ $orgInput == "sensato" ] || [ $orgInput == "westchester" ];
 	then	
 		ORG="$orgInput"
 		echo "Organization is $ORG"
@@ -28,7 +28,7 @@ read orgInput
 
 echo "Select managed security service provider: acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester"
 read msspInput
-	if [ $orgInput == "acme" ] || [$orgInput == "beebe"] || [$orgInput == "centrastate"] || [$orgInput == "ctoc"] || [$orgInput == "hunterdon"] || [$orgInput == "maimonides"] || [$orgInput == "sensato"] || [$orgInput == "westchester"];
+	if [ $orgInput == "acme" ] || [ $orgInput == "beebe" ] || [ $orgInput == "centrastate" ] || [ $orgInput == "ctoc" ] || [ $orgInput == "hunterdon" ] || [ $orgInput == "maimonides" ] || [ $orgInput == "sensato" ] || [ $orgInput == "westchester" ];
 	then	
 		MSSP="$msspInput"
 		echo "Managed security service provider is $MSSP"
