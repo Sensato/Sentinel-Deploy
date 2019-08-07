@@ -1,30 +1,70 @@
 #!/bin/bash
 
 # BDA APPLIANCE DEPLOYMENT SCRIPT
-echo What is the environment (prod/dev)
+echo "Select environment: (prod/dev)"
 read envInput
-ENV=$envInput
-echo environment is $envInput
+	if [ $envInput == "prod" ] || [ $envInput == "dev" ];
+	then	
+		ENV="$envInput"
+		echo "Environment is $ENV"
+	else
+		echo "Not a valid environment. Exiting..."
+		exit 0
+	fi
 
-echo What is the organization (acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester)
+
+echo "Select organization: (acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester)"
 read orgInput
-ORG=$orgInput
-echo organization is $orgInput
+	if [ $orgInput == "acme" ] || [$orgInput == "beebe"] || [$orgInput == "centrastate"] || [$orgInput == "ctoc"] || [$orgInput == "hunterdon"] || [$orgInput == "maimonides"] || [$orgInput == "sensato"] || [$orgInput == "westchester"];
+	then	
+		ORG="$orgInput"
+		echo "Organization is $ORG"
+	else
+		echo "Not a valid organization. Exiting..."
+		exit 0
+	fi
 
-echo What is the mssp (acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester)
+
+
+echo "Select managed security service provider: acme/beebe/centrastate/ctoc/hunterdon/maimonides/sensato/westchester"
 read msspInput
-MSSP=$msspInput
-echo mssp is $msspInput
+	if [ $orgInput == "acme" ] || [$orgInput == "beebe"] || [$orgInput == "centrastate"] || [$orgInput == "ctoc"] || [$orgInput == "hunterdon"] || [$orgInput == "maimonides"] || [$orgInput == "sensato"] || [$orgInput == "westchester"];
+	then	
+		MSSP="$msspInput"
+		echo "Managed security service provider is $MSSP"
+	else
+		echo "Not a valid managed security service provider. Exiting..."
+		exit 0
+	fi
 
-echo What is your github username
+
+
+echo "Enter github username:"
 read userInput
-USER=$userInput
-echo github username is $userInput
+	if [ $userInput ] && [];
+	then
+		USER="$userInput"
+		echo "Github username is $USER"
+	else
+		echo "Not a valid github username. Exiting..."
+		exit 0
+	fi
 
-echo What is your github token
+
+
+echo "Enter github token:"
 read tokenInput
-TOKEN=$tokenInput
-echo token is $tokenInput
+	if [] && [];
+	then
+		TOKEN="$tokenInput"
+		echo "Github token is $TOKEN"
+	else
+		echo "Not a valid github token. Exiting..."
+		exit 0
+	fi
+
+
+echo "Starting build..."
 
 # Variables
 # This is where a Sensato employee will change these varibles per organization
