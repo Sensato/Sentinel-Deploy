@@ -41,27 +41,14 @@ read msspInput
 
 echo "Enter github username:"
 read userInput
-	if [ $userInput ] && [];
-	then
-		USER="$userInput"
-		echo "Github username is $USER"
-	else
-		echo "Not a valid github username. Exiting..."
-		exit 0
-	fi
-
+USER="$userInput"
+echo "Github username is $USER"
 
 
 echo "Enter github token:"
 read tokenInput
-	if [] && [];
-	then
-		TOKEN="$tokenInput"
-		echo "Github token is $TOKEN"
-	else
-		echo "Not a valid github token. Exiting..."
-		exit 0
-	fi
+TOKEN="$tokenInput"
+echo "Github token is $TOKEN"
 
 
 echo "Starting build..."
