@@ -2,22 +2,16 @@
 Classified, and you should not know what this is.
 
 ## Pre-Requisites
-* git
-* a clean Ubuntu **16.04** 64-bit installation
+* git (install by entering `sudo apt-get install git` in the terminal)
+* a clean **Ubuntu 16.04 Server** 64-bit installation
 
 ## Installation
-* Clone this repository: `git clone [url].git` and `cd Sentinel-Deploy`
-* Move the shell scripts to bin: `mv *.sh /usr/bin`
+* Clone this repository: `git clone https://github.com/Sensato/Sentinel-Deploy.git` and `cd Sentinel-Deploy`
 
-* Give the script read/write/etc permissions: `chmod 777 /usr/bin/[device]-deployment.sh`
-* Edit `/etc/rc.local` to say this:
-```
-#!/bin/bash
-/usr/bin/[device]-deployment.sh || exit 1
-exit 0
-```
-* [device] being "sentinel" or "bda", case-sensitive.
-* Give rc.local permissions: `sudo chown root /etc/rc.local` and `sudo chmod 777 /etc/rc.local`
+* Give the script read/write/etc permissions: `chmod 777 [device]-deployment.sh`
+* Make the script executable: `chmod +x [device]-deployment.sh`
+  * [device] being "sentinel" or "bda", case-sensitive.
 
-## Distribution
-* to do
+* Run the script: `sudo ./[device]-deployment.sh`
+
+* Follow all the prompts on the screen, then the build will start.
