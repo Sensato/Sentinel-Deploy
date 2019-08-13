@@ -98,7 +98,7 @@ sudo python build_bda.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux
 # sudo python build_bda.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-bda.debug-$(date +"%s").log 2>&1
 
 # Self Destruct
-# rm -rf ~/packer-bda
-# rm -rf ~/Sentinel-Deploy
+rm -rf ~/packer-bda
+rm -rf ~/Sentinel-Deploy
 # sudo echo "exit 0" > /etc/rc.local # specific to BDA deployment, rc.local doesn't overwrite otherwise
-# sudo reboot
+sudo reboot
