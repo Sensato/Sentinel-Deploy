@@ -137,7 +137,7 @@ echo "Check the port for GSA(the web interface) with the following command:"
 echo "sudo netstat -lnp | grep gsad"
 echo "===========Functionality test==============="
 echo "Please go to https://localhost:443(the port might vary if it is already been used) and it will take you the openvas(gvm)'s web interface"
-echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, download the report as xml(open it with any broswer) and download it as the pdf."
+echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, download the report as xml(open it with any broswer) and please try to download the report as a pdf."
 
 echo "==========gvm-cli(might not need it) and gvm-python==========="
 echo "The installation only works if pip3 has the newer version"
