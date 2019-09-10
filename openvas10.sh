@@ -146,6 +146,6 @@ echo "and 'pip3 install --upgrade pip' in a new terminal"
 echo "Then, please run pip3 install --user gvm-tool in any terminal except the one you used to upgrade pip3"
 
 echo "=========Unfinished===================="
-rline="@reboot sleep 60 && bash /home/shimura/openvas10_start.sh"
+rline="@reboot sleep 60 && bash /opt/bash/openvas10_start.sh"
 (crontab -u root -l; echo "$rline" ) | crontab -u root -
 echo "Raymond/I still need to add the bash file to the repo"
