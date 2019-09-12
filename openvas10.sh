@@ -132,7 +132,7 @@ greenbone-certdata-sync
 echo "Done."
 echo "===========Up test==============="
 echo "Please run: sudo systemctl status redis-server.service"
-echo "Please run: ps aux | grep -E "openvassd|gsad|gvmd" | grep -v grep"
+echo "Please run: ps aux | grep -E 'openvassd|gsad|gvmd' | grep -v grep"
 echo "Check the port for GSA(the web interface) with the following command:"
 echo "sudo netstat -lnp | grep gsad"
 echo "===========Functionality test==============="
