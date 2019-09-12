@@ -1,4 +1,5 @@
-#!usr/bash
+#!/bin/bash
+
 #For Openvas10/GVM10
 #-----------Dependencies installation-----------
 apt update
