@@ -118,7 +118,6 @@ class OpenvasRemote:
                         result['report_id'] = report_result.xpath('@id')[0]
                         result['description'] = report_result.xpath(
                             'description/text()')[0]
-                        result['modification_time'] = report_result() 
                         result['name'] = report_result.xpath('name/text()')[0]
                         result['port'] = report_result.xpath('port/text()')[0]
                         result['nvt_bid'] = report_result.xpath(
@@ -279,7 +278,7 @@ def main():
     id = openvas_remote.create_target('Raybox',['192.168.112.137'],'sensat0','!23$M@ddie')
     task_id = openvas_remote.create_task('OpenVasTestBox',  openvas_remote.get_full_and_fast_config_id(), id,  openvas_remote.get_default_openvas_scanner_id(), 'sensat0', '!23$M@ddie')
     report_id = openvas_remote.start_task(task_id,'sensat0','!23$M@ddie')
-
+    print(report_id)
     #openvas_remote.get_report(report_id,['192.168.112.137'],'sensat0','!23$M@ddie')
 
 if __name__ == "__main__":
