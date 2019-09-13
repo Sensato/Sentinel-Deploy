@@ -276,39 +276,11 @@ def main():
     transform = EtreeTransform()
     openvas_remote = OpenvasRemote(path, connection, transform)
 
-    #username = int(sys.argv[1])
-    #password = int(sys.argv[2])print(test)
-    #test = openvas_remote.create_target("Python1 test433", ['192.168.115.57'],"admin","admin")
-    #test = openvas_remote.create_task(
-    #'test4515', openvas_remote.get_full_and_fast_config_id, 'ebd26987-74f7-4fbe-8269-db28da493c08', openvas_remote.get_default_openvas_scanner_id, 'admin', 'admin')
-    #test = openvas_remote.create_task(
-    #'test451225', OpenvasRemote.get_full_and_fast_config_id(), 'ebd26987-74f7-4fbe-8269-db28da493c08', OpenvasRemote.get_default_openvas_scanner_id(), 'admin', 'admin')
-    #test = openvas_remote.start_task('cc1e4b57-4d30-4f10-9c7b-33de40097e9e', 'admin','admin')
-    #test = openvas_remote.get_full_report(
-    #'080f4a67-84b8-4c16-bf56-1f75acea278b', 'admin', 'admin')
-    #openvas_remote.get_tasks('admin','admin')
-    #test =  openvas_remote.delete_all_targets('admin','admin')
-    #test = openvas_remote.scan_target('Full new task test102', 'New Target55',
-                                      #['192.168.115.57','192.168.112.137','101.133.14.13'], 'admin', 'admin')
-    
-    #test = openvas_remote.get_report('a450c321-397c-4580-96b0-58f855a40197',['192.168.115.57','192.168.112.137','101.133.14.13'],'admin','admin')
-    #openvas_remote.get_targets('admin','admin')
-    #print(test)
-
-    #ss = []
-    #for x in range(10):
-        #s = '.'.join([str(randint(0,255)) for y in range(2)])
-        #y = '192.128.' + s
-        #ss.append(y)
-        #print(ss)
-
-    #openvase_remote.test1('New Task Name','New Target Name',ss,3,'admin','admin')
-
     id = openvas_remote.create_target('Raybox',['192.168.112.137'],'sensat0','!23$M@ddie')
     task_id = openvas_remote.create_task('OpenVasTestBox',  openvas_remote.get_full_and_fast_config_id(), id,  openvas_remote.get_default_openvas_scanner_id(), 'sensat0', '!23$M@ddie')
     report_id = openvas_remote.start_task(task_id,'sensat0','!23$M@ddie')
 
-   #openvas_remote.get_report(report_id,['192.168.112.137'],'sensat0','!23$M@ddie')
+    #openvas_remote.get_report(report_id,['192.168.112.137'],'sensat0','!23$M@ddie')
 
 if __name__ == "__main__":
     main()
