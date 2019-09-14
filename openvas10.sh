@@ -107,10 +107,10 @@ make install
 
 gvm-manage-certs -a
 
-echo "username for openvas10/gvm10 :"
+echo "username for openvas10/gvm10:"
 read username
 
-echo "password for openvas10/gvm10 :"
+echo "password for openvas10/gvm10:"
 read password
 
 gvmd --create-user $username --role=Admin --password=$password
@@ -128,24 +128,37 @@ greenbone-certdata-sync
 5 0 * * * /usr/sbin/greenbone-scapdata-sync > /dev/null
 5 1 * * * /usr/sbin/greenbone-certdata-sync > /dev/null
 
+rline="@reboot sleep 60 && bash /opt/bash/openvas10_start.sh"
+(crontab -u root -l; echo "$rline" ) | crontab -u root -
 
 echo "Done."
+echo "================================="
+echo "================================="
 echo "===========Up test==============="
 echo "Please run: sudo systemctl status redis-server.service"
 echo "Please run: ps aux | grep -E 'openvassd|gsad|gvmd' | grep -v grep"
-echo "Check the port for GSA(the web interface) with the following command:"
+echo "Please looking for gsad, openvassd, and gvmd"
+echo "Maing sure gvmd and oepnvassd are Waiting for incoming connection."
+echo "gvmd should be configuring nvt(the latest vulernablity feeds) at the meanttime"
+echo "Check the port which GSA(the web interface, gsad) is listening with the following(below)command:"
+echo "The number after :::"
 echo "sudo netstat -lnp | grep gsad"
-echo "===========Functionality test==============="
-echo "Please go to https://localhost:443(the port might vary if it is already been used) and it will take you the openvas(gvm)'s web interface"
-echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, download the report as xml(open it with any broswer) and download it as the pdf."
 
+echo "===========Functionality test==============="
+echo "Please go to https://localhost:9392 (the port might vary if it is already been used, use the port number above it is different)," 
+echo "and it will take you the openvas(gvm)'s web interface"
+echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, download the report as xml(open it with any broswer) and download it as the pdf."
+echo "Run sudo apt install nmap if the report result suggests that you are missing a nmap scanner"
 echo "==========gvm-cli(might not need it) and gvm-python==========="
 echo "The installation only works if pip3 has the newer version"
-echo "Please run: sudo apt install python3-pip"
-echo "and 'pip3 install --upgrade pip' in a new terminal"
-echo "Then, please run pip3 install --user gvm-tool in any terminal except the one you used to upgrade pip3"
-
-echo "=========Unfinished===================="
-rline="@reboot sleep 60 && bash /opt/bash/openvas10_start.sh"
-(crontab -u root -l; echo "$rline" ) | crontab -u root -
-echo "Raymond/I still need to add the bash file to the repo"
+echo "Please run: sudo apt install python3-pip to upgrade pip,"
+echo "and pip3 install --upgrade pip in a new terminal"
+echo "Then, please run pip3 install --user gvm-tools in any terminal except the one you used to upgrade pip3"
+echo "============Check if openvassd/gvmd/gsad runs after one minute after start-up"
+echo "Run sudo crontab -e to check if @reboot sleep 60 && bash /opt/bash/openvas10_start.sh is added"
+echo "Please run ps aux | grep -E 'openvassd|gsad|gvmd' | grep -v grep again after one minute after a restart"
+echo "==========Partial functionality test for python==================="
+echo "Please run openvas10test.py with sudo python3 openvas10test.py"
+echo "It will automatically create a target, use the target for a task, and start a task."
+echo "Replace report_id in the script with report id shown on the terminal"
+echo "IMPORTANT! Please remove the openvas10test.py after the testing!!"
