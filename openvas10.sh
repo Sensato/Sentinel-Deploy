@@ -149,7 +149,7 @@ echo "and it will take you the openvas(gvm)'s web interface"
 echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, please check if a report is generated and download it as xml(open it with any broswer). 
 echo "Download the report as the pdf. "
 echo "Run sudo apt install nmap if the report result suggests that you are missing a nmap scanner"
-echo "==========gvm-cli(might not need it) and gvm-python==========="
+echo "==========gvm-cli and gvm-python==========="
 echo "The installation only works if pip3 has the newer version"
 echo "In a new terminal, please run: sudo apt install python3-pip to upgrade pip,"
 echo "and pip3 install --upgrade pip"
