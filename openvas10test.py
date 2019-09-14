@@ -274,14 +274,15 @@ def main():
     connection = UnixSocketConnection(path=path)
     transform = EtreeTransform()
     openvas_remote = OpenvasRemote(path, connection, transform)
- 
+    username = "".join(sys.arg[1])
+    password = "".join(sys.arg[2])
     #==================Comment the next 4 line with after running this python script===================================
-    id = openvas_remote.create_target('Raybox',['192.168.112.137'],'sensat0','!23$M@ddie')
-    task_id = openvas_remote.create_task('OpenVasTestBox',  openvas_remote.get_full_and_fast_config_id(), id,  openvas_remote.get_default_openvas_scanner_id(), 'sensat0', '!23$M@ddie')
-    report_id = openvas_remote.start_task(task_id,'sensat0','!23$M@ddie')
+    id = openvas_remote.create_target('Raybox',['192.168.112.137'], username, password)
+    task_id = openvas_remote.create_task('OpenVasTestBox',  openvas_remote.get_full_and_fast_config_id(), id,  openvas_remote.get_default_openvas_scanner_id(), username , password)
+    report_id = openvas_remote.start_task(task_id, username, password)
     print('replace this id: ' + report_id + ' in report id in this code file to get the report in a json format')
     #==================Ucomment next line after running this python script once==================
-    #openvas_remote.get_report('report_id',['192.168.112.137'],'sensat0','!23$M@ddie')
+    #openvas_remote.get_report('report_id',['192.168.112.137'], username,password)
 
 if __name__ == "__main__":
     main()
