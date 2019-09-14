@@ -275,13 +275,13 @@ def main():
     transform = EtreeTransform()
     openvas_remote = OpenvasRemote(path, connection, transform)
  
-    #==================Comment the next 4 line with after you run this python script===================================
+    #==================Comment the next 4 line with after running this python script===================================
     id = openvas_remote.create_target('Raybox',['192.168.112.137'],'sensat0','!23$M@ddie')
     task_id = openvas_remote.create_task('OpenVasTestBox',  openvas_remote.get_full_and_fast_config_id(), id,  openvas_remote.get_default_openvas_scanner_id(), 'sensat0', '!23$M@ddie')
     report_id = openvas_remote.start_task(task_id,'sensat0','!23$M@ddie')
-    print('use this id: ' + report_id + ' to get the report in a json format')
-    #==================UnComment next line after you run this python script==================
-    #openvas_remote.get_report(report_id,['192.168.112.137'],'sensat0','!23$M@ddie')
+    print('replace this id: ' + report_id + ' in report id in this code file to get the report in a json format')
+    #==================Ucomment next line after running this python script once==================
+    #openvas_remote.get_report('report_id',['192.168.112.137'],'sensat0','!23$M@ddie')
 
 if __name__ == "__main__":
     main()
