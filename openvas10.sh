@@ -128,7 +128,7 @@ greenbone-certdata-sync
 5 0 * * * /usr/sbin/greenbone-scapdata-sync > /dev/null
 5 1 * * * /usr/sbin/greenbone-certdata-sync > /dev/null
 
-rline="@reboot sleep 60 && bash /opt/bash/openvas10_start.sh"
+rline="@reboot sleep 60 && bash /opt/nightingale-nids/bash/openvas10_start.sh"
 (crontab -u root -l; echo "$rline" ) | crontab -u root -
 
 echo "Done."
