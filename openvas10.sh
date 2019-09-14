@@ -158,7 +158,7 @@ echo "============Check if openvassd/gvmd/gsad runs after one minute after start
 echo "Run sudo crontab -e to check if @reboot sleep 60 && bash /opt/bash/openvas10_start.sh is added"
 echo "Please wait for one minute then run (ps aux | grep -E 'openvassd|gsad|gvmd' | grep -v grep) again after a restart"
 echo "==========Partial functionality test for python==================="
-echo "Please run openvas10test.py with sudo python3 openvas10test.py"
+echo "Please run openvas10test.py with (sudo python3 openvas10test.py (replace username here with no parathensis) (replace password here with no parathensis))"
 echo "It will automatically create a target, use the target for a task, and start a task."
 echo "Replace report_id in the script with report id shown on the terminal"
 echo "IMPORTANT! Please remove the openvas10test.py after the testing!!"
