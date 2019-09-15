@@ -146,7 +146,7 @@ echo "It will be the number after :::"
 echo "===========Functionality test==============="
 echo "Please go to https://localhost:9392, the port might vary if it is already been used, use the port number above if it is other than 9392)," 
 echo "and it will take you the openvas(gvm)'s web interface"
-echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, please check if a report is generated and download it as xml(open it with any broswer). 
+echo "Please create a task, pick a reachable target, and run the scan. When the scan is finished, please check if a report is generated and download it as xml(open it with any broswer)." 
 echo "Download the report as the pdf. "
 echo "Run sudo apt install nmap if the report result suggests that you are missing a nmap scanner"
 echo "==========gvm-cli and gvm-python==========="
