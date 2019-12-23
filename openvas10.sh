@@ -35,14 +35,14 @@ cd gvm-libs-10.0.1/
 mkdir build
 cd build/
 cmake ..
-make
+make -j`nproc`
 make install
 
 cd /tmp/gvm10/openvas-smb-1.0.5
 mkdir build
 cd build
 cmake ..
-make
+make -j`nproc`
 make install
 
 cd /tmp/gvm10/ospd-1.3.2
@@ -52,7 +52,7 @@ cd /tmp/gvm10/openvas-6.0.1/
 mkdir build
 cd build
 cmake ..
-make
+make -j`nproc`
 sudo make install
 
 #----------------Reconfig redis-server----------------
@@ -95,14 +95,14 @@ cd /tmp/gvm10/gvmd-8.0.1/
 mkdir build
 cd build
 cmake ..
-make
+make -j`nproc`
 make install
 
 cd /tmp/gvm10/gsa-8.0.1
 mkdir build
 cd build
 cmake ..
-make
+make -j`nproc`
 make install
 
 gvm-manage-certs -a
