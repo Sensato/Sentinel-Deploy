@@ -158,7 +158,7 @@ echo "==========gvm-cli and gvm-python==========="
 echo "The installation only works if pip3 has the newer version"
 echo -e "Please open a new terminal with ${Yellow}CTRL+ALT+T${White}, ${Green} sudo su${White} to the root user,then run: ${Green}apt install python3-pip${White} to install pip3,"
 echo -e "and ${Green}pip3 install --upgrade pip${White} to upgrade pip3"
-echo -e "Then, please open another new terminal, run ${Green}sudo su${White} and ${Green}pip3 install --user gvm-tools${White} and ${Green}pip3 install --user psycopg2
+echo -e "Then, please open another new terminal, run ${Green}sudo su${White} and ${Green}pip3 install --user gvm-tools${White} and ${Green}pip3 install --user psycopg2"
 echo -e "${White}============Check if openvassd/gvmd/gsad will run after one minute after a start-up."
 echo -e "Please Run${Green} sudo crontab -e ${White}to check if ${Yellow}@reboot sleep 60 && bash /opt/nightingale-nids/bash/openvas10_start.sh${White} is added."
 echo -e "After a restart up, please wait for one minute then run ${Green}ps aux | grep -E 'openvassd|gsad|gvmd' | grep -v grep ${White} to make sure openvas is running"
