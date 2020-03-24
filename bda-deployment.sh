@@ -48,7 +48,7 @@ pip install azure-cosmos
 cd ~
 git clone http://$USER:$TOKEN@github.com/Sensato/packer-bda.git
 cd packer-bda
-git checkout remake
+git checkout rework
 
 # Install Azure CLI
 sudo apt install apt-transport-https lsb-release gnupg -y
