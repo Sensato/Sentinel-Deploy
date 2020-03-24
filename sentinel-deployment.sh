@@ -1,22 +1,17 @@
 #!/bin/bash
-echo "================================="
-echo "Device Initial Configuration v2.1"
-echo "================================="
+# Version 3.x on 3.24.2020
+echo "============================"
+echo "Device Initial Configuration"
+echo "============================"
 echo ""
 # Select Environment and set value to variable
 echo "Select environment: (prod/dev)"
 read envInput
-	if [ $envInput == "prod" ] || [ $envInput == "dev" ];
-	then	
-		ENV="$envInput"
+		read envInput
+		ORG="$envInput"
 		echo "Environment is $ENV"
-	else
-		echo "Not a valid environment. Exiting..."
-		exit 0
-	fi
 
 # Select ORG and set value to variable
-# WARNING: No validation of entered ORG. Removed defined array to support scalability
 echo ""
 echo "Enter desired ORG:"
 		read orgInput
@@ -24,7 +19,6 @@ echo "Enter desired ORG:"
 		echo "Organization is $ORG"
 
 # Select MSSP and set value to variable
-# WARNING: No validation of entered MSSP. Removed defined array to support scalability
 echo ""
 echo "Enter desired MSSP [Managed Security Service Provider]:"
 		read msspInput
@@ -55,7 +49,7 @@ pip install azure-cosmos
 cd ~
 git clone http://$USER:$TOKEN@github.com/Sensato/packer-nids.git
 cd packer-nids
-git checkout appliance
+git checkout remake
 
 # Install Azure CLI
 sudo apt install apt-transport-https lsb-release gnupg -y
@@ -74,6 +68,3 @@ STR="Debug Message: Building Sentinel on environment $ENV, organization $ORG, ms
 echo $STR
 sudo mkdir -p ~/.debug
 sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux
-
-# Run the following command instead of the previous command to write build output to a file at ~/.debug
-# sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux > ~/.debug/packer-nids.debug-$(date +"%s").log 2>&1
