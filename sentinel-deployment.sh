@@ -66,5 +66,4 @@ az extension add --name azure-cli-iot-ext
 
 STR="Debug Message: Building Sentinel on environment $ENV, organization $ORG, msspid $MSSP."
 echo $STR
-sudo mkdir -p ~/.debug
 sudo python build_sensor.py env=$ENV orgid=$ORG msspid=$MSSP buildos=linux
