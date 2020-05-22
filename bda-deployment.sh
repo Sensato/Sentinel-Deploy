@@ -50,7 +50,7 @@ sudo apt-add-repository multiverse
 sudo apt update -y
 
 sudo apt install curl python python-pip -y
-pip install azure-cosmos
+pip install azure-cosmos==3.1.2
 
 cd ~
 git clone http://$USER:$TOKEN@github.com/Sensato/packer-bda.git
